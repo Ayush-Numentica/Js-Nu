@@ -23,5 +23,5 @@ function insertingSymbolAfterCharacter(inputSentenceElements) {
     return modifiedSentence;
 }
 
-const givenSentence = "abab";
+const givenSentence = "cat in the bag";
 console.log(insertingSymbolAfterCharacter(givenSentence));

@@ -2,7 +2,7 @@ function toReplaceNumbersToCharacter(originalString, replacingCharacter) {
     if (typeof originalString !== "string" && typeof replacingCharacter !== "string") {
         return "Invalid input! It is not a String";
     }
-    if ((originalString.length === 0 || originalString === " ") && (replacingCharacter.length === 0 || replacingCharacter === " ")) {
+    if (originalString.length === 0 || originalString === " " || replacingCharacter.length === 0 || replacingCharacter === " ") {
         return "Invalid input! It is an Empty String";
     }
     let numberPresence = false;
