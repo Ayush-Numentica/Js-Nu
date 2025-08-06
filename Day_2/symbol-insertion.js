@@ -12,7 +12,6 @@ function insertingSymbolAfterCharacter(inputSentenceElements) {
         return "Invalid Input! It is an Empty String"
     }
 
-
     // inserting the character next to desired index
     let modifiedSentence = "";
     let characterPresence = false;

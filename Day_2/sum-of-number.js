@@ -3,24 +3,13 @@
 function findSumOfNumbersInputAsString(inputString) {
 
     // checking whether the input is string only
-    if(typeof inputString !== "string")
-    {
+    if (typeof inputString !== "string") {
         return "Invalid input! Input is not a String";
     }
 
     // checking whether the input string is empty 
-    if(inputString.length===0 || inputString.length===" ")
-    {
+    if (inputString.length === 0 || inputString.length === " ") {
         return "Invalid input! the string is empty";
-    }
-
-    // checking whether the string element is only number
-    for(let i=0;i<inputString.length;i++)
-    {
-        if(isNaN(inputString[i]))
-        {
-            return inputString[i]+"It is not a valid input";
-        }
     }
 
     let currentNumber = "";
@@ -33,6 +22,10 @@ function findSumOfNumbersInputAsString(inputString) {
             if (currentNumber !== "") {
                 let parsedNumber = parseFloat(currentNumber);
                 numberList[numberList.length] = parsedNumber;
+                // checking whether the string element is only number
+                if (isNaN(parsedNumber)) {
+                    return "It is not a number";
+                }
             }
             currentNumber = "";
         }
@@ -49,5 +42,5 @@ function findSumOfNumbersInputAsString(inputString) {
     return sumOfListItems;
 }
 
-let stringOfNumbers="1.5, 2, 44, 66, 12, 90";
+let stringOfNumbers = "1.5, ab2, 44, 66, 12, 90";
 console.log(findSumOfNumbersInputAsString(stringOfNumbers));

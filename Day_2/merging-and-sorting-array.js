@@ -10,14 +10,24 @@ function toMergeTwoArrayAndSort(inputFirstArray, inputSecondArray) {
     if (inputFirstArray.length === 0 || inputSecondArray.length === 0) {
         return "Your List is Empty ";
     }
-    
+
     //merging the array
 
     let mergedList = [];
     for (let i = 0; i < inputFirstArray.length; i++) {
+
+        // checking for the empty slot in array
+        if (!(i in inputFirstArray)) {
+            return "index " + i + " is an empty slot";
+        }
         mergedList[mergedList.length] = inputFirstArray[i];
     }
     for (let i = 0; i < inputSecondArray.length; i++) {
+
+        // checking for the empty slot in array
+        if (!(i in inputSecondArray)) {
+            return "index " + i + " is an empty slot";
+        }
         mergedList[mergedList.length] = inputSecondArray[i];
     }
 

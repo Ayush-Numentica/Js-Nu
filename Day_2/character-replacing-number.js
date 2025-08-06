@@ -2,7 +2,7 @@
 
 
 function toReplaceNumbersToCharacter(originalString, replacingCharacter) {
-    
+
     //to check whether the input is of string type only
     if (typeof originalString !== "string" && typeof replacingCharacter !== "string") {
         return "Invalid input! It is not a String";
@@ -15,7 +15,7 @@ function toReplaceNumbersToCharacter(originalString, replacingCharacter) {
 
     //replace the numbers with character
     let numberPresence = false;
-    
+
     let replacedString = "";
     for (let i = 0; i < originalString.length; i++) {
         let currentCharacter = originalString[i];

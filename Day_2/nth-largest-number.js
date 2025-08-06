@@ -25,11 +25,17 @@ function toFindTheNthLargestNumberFromArray(inputItemList, nthNumber) {
     // checking whether the array contain string or not
     let stringPresence = false;
     for (let i = 0; i < inputItemList.length; i++) {
+
+        // checking for the empty slot in array
+        if (!(i in inputItemList)) {
+            return "index " + i + " is an empty slot";
+        }
+
         if (typeof inputItemList[i] === "string") {
             stringPresence = true;
         }
     }
-    
+
     //sorting and returning the desired target
     let swapVariable = 0;
     for (let i = 0; i < inputItemList.length - 1; i++) {

@@ -11,6 +11,14 @@ function toFindMissingNumberInArray(inputArrayElements) {
     }
 
 
+    // checking for the empty slot in array
+    for (let i = 0; i < inputArrayElements.length; i++) {
+        if (!(i in inputArrayElements)) {
+            return "index " + i + " is an empty slot";
+        }
+    }
+
+
     // finding the highest and lowest in the array
     let highestNum = inputArrayElements[0];
     let lowestNum = inputArrayElements[0];
@@ -38,7 +46,7 @@ function toFindMissingNumberInArray(inputArrayElements) {
             missingNum += i + " ";
         }
     }
-    return "Missing Numbers are" + missingNum;
+    return "Missing Numbers are " + missingNum;
 }
 
 const numberList = [68, 71, 69, 73];
