@@ -40,4 +40,4 @@ function toFindTheNthLargestNumberFromArray(inputItemList, nthNumber) {
 const numberList = [1, 3, 9, 2, 4];
 const targetNumber = 4;
 let numberListSize = numberList.length;
-console.log(toFindTheNthLargestNumberFromArray(numberList, targetNumber))
+console.log(toFindTheNthLargestNumberFromArray(numberList, targetNumber));
