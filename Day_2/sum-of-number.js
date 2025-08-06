@@ -1,19 +1,26 @@
-function findSumOfNumbersInputAsString(inputString)
-{
-    let numberList=[];
-    for(let i=0;i<inputString.length;i++)
-    {
-        if(inputString[i]===","||inputString[i]===" ")
-        {
-            continue;
+function findSumOfNumbersInputAsString(inputString) {
+    let currentNumber = "";
+    let numberList = [];
+
+    for (let i = 0; i <= inputString.length; i++) {
+        let inputStringChar = inputString[i];
+
+        if (inputStringChar === "," || i === inputString.length) {
+            if (currentNumber !== "") {
+                let num = parseFloat(currentNumber);
+                numberList[numberList.length] = num;
+            }
+            currentNumber = "";
         }
-        else
-        {
-            numberList+=inputString[i];
+        else if (inputStringChar !== " ") {
+            currentNumber += inputStringChar;
         }
     }
-    return typeof numberList;
-}
 
-const numberInString="1.5, 2, 44, 66, 12, 90";
-console.log(findSumOfNumbersInputAsString(numberInString));
+    let sum = 0;
+    for (let i = 0; i < numberList.length; i++) {
+        sum += numberList[i];
+    }
+
+    return sum;
+}
