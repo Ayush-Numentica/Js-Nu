@@ -1,14 +1,18 @@
-let arr=[2,5,8,9,4]
-console.log(even(arr))
+function doubleEvenNumbersInArray(inputArrayItems) {
 
-function even(myarr)
-{
-    for(let i=0;i<myarr.length;i++)
-    {
-        if(myarr[i]%2==0)
-        {
-            myarr[i]+=myarr[i]
+    if (typeof inputArrayItems !== "array") {
+        return "It is not an array";
+    }
+    if (inputArrayItems.length === 0) {
+        return "The array is empty"
+    }
+    for (let i = 0; i < inputArrayItems.length; i++) {
+        if (inputArrayItems[i] % 2 == 0) {
+            inputArrayItems[i] += inputArrayItems[i];
         }
     }
-    return myarr;
+    return inputArrayItems;
 }
+
+const numberList = [2, 5, 8, 9, 4];
+console.log(doubleEvenNumbersInArray(numberList))
