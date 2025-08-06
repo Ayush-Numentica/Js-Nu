@@ -1,11 +1,17 @@
+// Find the missing numbers in an array
+
 function toFindMissingNumberInArray(inputArrayElements) {
+    // checking whether the input is array or not
     if (!Array.isArray(inputArrayElements)) {
         return "Invalid input, input is not an array";
     }
+    // checking whether the array is empty or not
     if (inputArrayElements.length === 0) {
         return "Your List is Empty";
     }
 
+
+    // finding the highest and lowest in the array
     let highestNum = inputArrayElements[0];
     let lowestNum = inputArrayElements[0];
     for (let i = 0; i < inputArrayElements.length; i++) {
@@ -17,6 +23,8 @@ function toFindMissingNumberInArray(inputArrayElements) {
         }
     }
 
+
+    // finding the missing number
     let missingNum = "";
     for (let i = lowestNum; i < highestNum; i++) {
         let numFound = false;

@@ -1,13 +1,23 @@
+// Find the Nth largest number in an array
+
 function toFindTheNthLargestNumberFromArray(inputItemList, nthNumber) {
+
+    // check whether the input is of type array or not and number input is of type number or not
     if (!(Array.isArray(inputItemList)) || typeof nthNumber !== "number") {
         return "It is not an Array";
     }
+
+    // check if the input array is empty or not
     if (inputItemList.length === 0) {
         return "The Array is Empty";
     }
+
+    // check whether the input number is 0 or not
     if (nthNumber === 0) {
         return "Your target Number is Invalid";
     }
+
+    // checking that the searched element must be within the array itself
     if (inputItemList.length < nthNumber) {
         return "You are accessing out of the List"
     }

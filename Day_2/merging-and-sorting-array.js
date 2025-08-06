@@ -1,12 +1,17 @@
+// Merge two arrays and sort them from lowest to highest
+
 function toMergeTwoArrayAndSort(inputFirstArray, inputSecondArray) {
+    // cheking whether the input is array or not
     if (!Array.isArray(inputFirstArray) || !Array.isArray(inputSecondArray)) {
         return "Invalid input,input is not an array";
     }
+
+    //checking whether the input array is empty or not
     if (inputFirstArray.length === 0 || inputSecondArray.length === 0) {
         return "Your List is Empty ";
     }
     
-    //merging of array
+    //merging the array
 
     let mergedList = [];
     for (let i = 0; i < inputFirstArray.length; i++) {
