@@ -1,11 +1,18 @@
-function findSumOfNumbersInputAsString(inputNumberElements)
+function findSumOfNumbersInputAsString(inputString)
 {
-    let numberFromString=[];
-    for(let i=0;i<inputNumberElements.length;i++)
+    let numberList=[];
+    for(let i=0;i<inputString.length;i++)
     {
-        numberFromString+=parseFloat(inputNumberElements[i])
+        if(inputString[i]===","||inputString[i]===" ")
+        {
+            continue;
+        }
+        else
+        {
+            numberList+=inputString[i];
+        }
     }
-    return numberFromString;
+    return typeof numberList;
 }
 
 const numberInString="1.5, 2, 44, 66, 12, 90";

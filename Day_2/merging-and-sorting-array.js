@@ -5,6 +5,7 @@ function toMergeTwoArrayAndSort(inputFirstArray, inputSecondArray) {
     if (inputFirstArray.length === 0 || inputSecondArray.length === 0) {
         return "Your List is Empty ";
     }
+    
     //merging of array
 
     let mergedList = [];
