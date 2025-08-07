@@ -1,6 +1,6 @@
 // Find the Nth largest number in an array
 
-function toFindTheNthLargestNumberFromArray(inputItemList, nthNumber) {
+function findTheNthLargestNumberFromArray(inputItemList, nthNumber) {
 
     // check whether the input is of type array or not and number input is of type number or not
     if (!(Array.isArray(inputItemList)) || typeof nthNumber !== "number") {
@@ -53,7 +53,7 @@ function toFindTheNthLargestNumberFromArray(inputItemList, nthNumber) {
     return inputItemList[inputItemList.length - nthNumber];
 }
 
-const numberList = [1, 3, 9, 2, 4];
+const numberList = [1, 3, 9, 2, 4, 'ab'];
 const targetNumber = 4;
 let numberListSize = numberList.length;
-console.log(toFindTheNthLargestNumberFromArray(numberList, targetNumber));
+console.log(findTheNthLargestNumberFromArray(numberList, targetNumber));

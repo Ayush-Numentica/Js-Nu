@@ -1,6 +1,6 @@
 // Merge two arrays and sort them from lowest to highest
 
-function toMergeTwoArrayAndSort(inputFirstArray, inputSecondArray) {
+function mergeTwoArrayAndSort(inputFirstArray, inputSecondArray) {
     // cheking whether the input is array or not
     if (!Array.isArray(inputFirstArray) || !Array.isArray(inputSecondArray)) {
         return "Invalid input,input is not an array";
@@ -48,4 +48,4 @@ function toMergeTwoArrayAndSort(inputFirstArray, inputSecondArray) {
 
 const firstList = [1, 4, 6];
 const secondList = [2, 5, 3];
-console.log(toMergeTwoArrayAndSort(firstList, secondList))
+console.log(mergeTwoArrayAndSort(firstList, secondList))

@@ -18,7 +18,7 @@ function insertingSymbolAfterCharacter(inputSentenceElements) {
     for (let i = 0; i < inputSentenceElements.length; i++) {
         let currentChar = inputSentenceElements[i];
         modifiedSentence += currentChar;
-        if (currentChar === "c") {
+        if (currentChar === "c" || currentChar === "C") {
             modifiedSentence += "@";
             characterPresence = true;
         }
@@ -29,5 +29,5 @@ function insertingSymbolAfterCharacter(inputSentenceElements) {
     return modifiedSentence;
 }
 
-const givenSentence = "cat in the bag";
+const givenSentence = "Cat in the bag";
 console.log(insertingSymbolAfterCharacter(givenSentence));

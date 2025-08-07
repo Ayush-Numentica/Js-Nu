@@ -1,7 +1,7 @@
 //Replace all numbers in a string with a given character
 
 
-function toReplaceNumbersToCharacter(originalString, replacingCharacter) {
+function replaceNumbersToCharacter(originalString, replacingCharacter) {
 
     //to check whether the input is of string type only
     if (typeof originalString !== "string" && typeof replacingCharacter !== "string") {
@@ -15,7 +15,6 @@ function toReplaceNumbersToCharacter(originalString, replacingCharacter) {
 
     //replace the numbers with character
     let numberPresence = false;
-
     let replacedString = "";
     for (let i = 0; i < originalString.length; i++) {
         let currentCharacter = originalString[i];
@@ -37,6 +36,6 @@ function toReplaceNumbersToCharacter(originalString, replacingCharacter) {
     return replacedString;
 }
 
-const givenString = "arun@123";
+const givenString = "arun@12300";
 const givenReplacingCharacter = "d";
-console.log(toReplaceNumbersToCharacter(givenString, givenReplacingCharacter));
+console.log(replaceNumbersToCharacter(givenString, givenReplacingCharacter));

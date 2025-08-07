@@ -42,5 +42,5 @@ function findSumOfNumbersInputAsString(inputString) {
     return sumOfListItems;
 }
 
-let stringOfNumbers = "1.5, ab2, 44, 66, 12, 90";
+let stringOfNumbers = "1.5, -20";
 console.log(findSumOfNumbersInputAsString(stringOfNumbers));

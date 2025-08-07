@@ -1,6 +1,6 @@
 // Find the missing numbers in an array
 
-function toFindMissingNumberInArray(inputArrayElements) {
+function findMissingNumberInArray(inputArrayElements) {
     // checking whether the input is array or not
     if (!Array.isArray(inputArrayElements)) {
         return "Invalid input, input is not an array";
@@ -49,5 +49,5 @@ function toFindMissingNumberInArray(inputArrayElements) {
     return "Missing Numbers are " + missingNum;
 }
 
-const numberList = [68, 71, 69, 73];
-console.log(toFindMissingNumberInArray(numberList));
+const numberList = [68, 71, 69, 'a', 0, true, 73];
+console.log(findMissingNumberInArray(numberList));
