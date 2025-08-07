@@ -1,4 +1,4 @@
-//Add "@" after each occurrence of character "c" in a string
+//******Add "@" after each occurrence of character "c" in a string******
 
 function insertingSymbolAfterCharacter(inputSentenceElements) {
 
