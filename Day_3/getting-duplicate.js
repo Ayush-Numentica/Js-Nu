@@ -1,5 +1,5 @@
 function findAllTheDuplicatesInArray(inputListItems) {
-    // checking whether the inout is array or not
+    // checking whether the input is array or not
     if (!Array.isArray(inputListItems)) {
         return "Invalid input! it is not an array";
     }
@@ -44,5 +44,5 @@ function findAllTheDuplicatesInArray(inputListItems) {
 }
 
 
-const givenList = [1, 2, 3, 2, 4, 5, 3, 6];
+const givenList = [1, 2, 3, 2, 4, 5, 3,6, 6];
 console.log(findAllTheDuplicatesInArray(givenList));
