@@ -57,10 +57,10 @@ function groupingItemsAccordingToInitialCharacter(inputArrayItems) {
     for (let i = 0; i < convertedArray.length; i++) {
         let currentItem = convertedArray[i];
         let intialChar = currentItem[0];
-        let alreadyGrouped = false
-
-
+        
+        
         // checking whether the same group is not inserted again
+        let alreadyGrouped = false
         for (let j = 0; j < visitedGroup.length; j++) {
             if (visitedGroup[j] === intialChar) {
                 alreadyGrouped = true;
