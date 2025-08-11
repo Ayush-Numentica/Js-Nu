@@ -3,7 +3,8 @@
 function convertingTheNumberToString(inputNum) {
     // checking whether is is number only
     if (typeof inputNum !== "number") {
-        return "Invalid input! it is not a number";
+        console.error("error in input");
+        return false;
     }
 
     //if the number is zero
@@ -38,5 +39,5 @@ function convertingTheNumberToString(inputNum) {
     return finalNumberWord;
 }
 
-const givenNum = 98;
+const givenNum = "ayush";
 console.log(convertingTheNumberToString(givenNum));
