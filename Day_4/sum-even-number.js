@@ -2,34 +2,38 @@
 
 function findingTheEvenNumberAndTheirSum(givenInputItems) {
     // checking whether the inout is array
-    if (!Array.isArray(inputArrayElements)) {
+    if (!Array.isArray(givenInputItems)) {
         "Invalid inout, it is not an array"
     }
 
     // check whether the array is empty
-    if (inputArrayElements.length === 0) {
+    if (givenInputItems.length === 0) {
         return "the array is empty";
     }
 
-    // cleaning the array from the empty slot
-    let cleanedArray = [];
-    for (let i = 0; i < givenInputItems.length; i++) {
-        if ((i in givenInputItems) && (typeof givenInputItems[i] !== "string")) {
-            cleanedArray[cleanedArray.length] = givenInputItems[i];
-        }
+    // checking if the first item is not a string or empty slot
+    if (givenInputItems.length === 1 && (!(0 in givenInputItems) || typeof givenInputItems[0] === "string")) {
+        return "Invalid input, your first item is invalid";
     }
 
     //finding the even number and their sum
     let sumOfEven = 0;
     let evenNum = [];
-    for (let i = 0; i < cleanedArray.length; i++) {
-        if (cleanedArray[i] % 2 === 0) {
-            sumOfEven += cleanedArray[i];
-            evenNum[evenNum.length] = cleanedArray[i];
+    for (let i = 0; i < givenInputItems.length; i++) {
+        // skipping the non number values
+        if (!(i in givenInputItems) && (typeof givenInputItems[i] !== "number")) {
+            continue;
+        }
+        if (givenInputItems[i] % 2 === 0) {
+            sumOfEven += givenInputItems[i];
+            evenNum[evenNum.length] = givenInputItems[i];
         }
     }
-    return "the even number list is " + evenNum + " and the sum of elements are " + sumOfEven;
+    if (sumOfEven===0) {
+        return "Even number is not present in array";
+    }
+    return " list is " + evenNum + " sum is " + sumOfEven;
 }
 
-let inputArray = [38, 3, 2, 8, 31];
+let inputArray = [3,5,7];
 console.log(findingTheEvenNumberAndTheirSum(inputArray));

@@ -1,6 +1,6 @@
 //Find the characters that are repeating the most simultaneously
 
-function findingTheMostSimultaneouslyRepeatingCharacter(inputString) {
+function findTheConsecutivelyRepeatingCharacter(inputString) {
     // checking whether the input is string
     if (typeof inputString !== "string") {
         return "Invalid input! it is not a string";
@@ -11,9 +11,15 @@ function findingTheMostSimultaneouslyRepeatingCharacter(inputString) {
         return "it is an empty string";
     }
 
+    // checking for single character in string
+    if(inputString.length===1)
+    {
+        return inputString;
+    }
+
     //counting the character
     let maxCount = 1;
-    let finalChar = [];
+    let finalChar = "";
     let currentChar = inputString[0]
     let currentCount = 1;
 
@@ -26,11 +32,11 @@ function findingTheMostSimultaneouslyRepeatingCharacter(inputString) {
             currentCount = 1;
         }
 
-        //pushing maxChar in array
+        //pushing maximum character in array
         if (currentCount > maxCount) {
             maxCount = currentCount;
-            finalChar = [];
-            finalChar[finalChar.length] = currentChar;
+            finalChar = "";
+            finalChar += currentChar+" ";
         }
         else if (currentCount === maxCount) {
 
@@ -43,12 +49,16 @@ function findingTheMostSimultaneouslyRepeatingCharacter(inputString) {
                 }
             }
             if (!alreadyPresence) {
-                finalChar[finalChar.length] = currentChar;
+                finalChar += currentChar+" ";
             }
         }
+    }
+    if(maxCount===1)
+    {
+        return "there is no any consecutive repeating character";
     }
     return finalChar;
 }
 
 let givenSentence = "traaainngfornewbie";
-console.log(findingTheMostSimultaneouslyRepeatingCharacter(givenSentence));
+console.log(findTheConsecutivelyRepeatingCharacter(givenSentence));

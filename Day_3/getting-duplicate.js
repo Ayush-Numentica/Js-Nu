@@ -9,40 +9,39 @@ function findAllTheDuplicatesInArray(inputListItems) {
         return "Your array is empty";
     }
 
-
-    // checking whether the array does not contain string, empty slot or any character
-    let cleanedList = [];
-    for (let i = 0; i < inputListItems.length; i++) {
-        if ((i in inputListItems) && typeof inputListItems[i] === "number" && !isNaN(inputListItems[i])) {
-            cleanedList[cleanedList.length] = inputListItems[i];
-        }
+    // checking whether the inital element of the array is empty string and empty slot
+    if (inputListItems.length === 1 && (inputListItems[0] === " " || !(0 in inputListItems) || typeof inputListItems[0] !== "number")) {
+        return "Invalid input";
     }
 
     // finding the duplicate items and pushing it into new array
+    let duplicateItemArray = [];
+    for (let i = 0; i < inputListItems.length; i++) {
 
-    let duplicateArray = [];
 
-    for (let i = 0; i < cleanedList.length; i++) {
-        for (let j = i + 1; j < cleanedList.length; j++) {
-            if (cleanedList[i] === cleanedList[j]) {
+        if (!(i in inputListItems) || typeof inputListItems[i] !== "number" || isNaN(inputListItems[i])) {
+            continue;
+        }
+        for (let j = i + 1 ; j < inputListItems.length ; j++) {
+            if (inputListItems[i] === inputListItems[j]) {
 
                 // checking if the string is already present or not
                 let alreadyExist = false;
-                for (let k = 0; k < duplicateArray.length; k++) {
-                    if (duplicateArray[k] === cleanedList[i]) {
+                for (let k = 0; k < duplicateItemArray.length; k++) {
+                    if (duplicateItemArray[k] === inputListItems[i]) {
                         alreadyExist = true;
                         break;
                     }
                 }
                 if (!alreadyExist) {
-                    duplicateArray[duplicateArray.length] = cleanedList[i];
+                    duplicateItemArray[duplicateItemArray.length] = inputListItems[i];
                 }
             }
         }
     }
-    return duplicateArray;
+    return duplicateItemArray;
 }
 
 
-const givenList = [1, 2, 3, 2, 4, 5, 3,6, 6];
+const givenList = [,];
 console.log(findAllTheDuplicatesInArray(givenList));

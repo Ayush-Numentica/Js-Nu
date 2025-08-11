@@ -1,26 +1,26 @@
 // Find sum of multiples
 
-function findingTheSumOfMultiple(inputNum, countOfMultiplication) {
+function findingTheSumOfMultiple(inputNum, timesOfMultiplication) {
     // checking whether is is number only
-    if (typeof inputNum !== "number" || typeof countOfMultiplication !== "number") {
+    if (typeof inputNum !== "number" || typeof timesOfMultiplication !== "number") {
         return "Invalid input! it is not a number";
     }
 
     // checking whether the input number is zero
-    if (inputNum === 0 || countOfMultiplication === 0) {
+    if (inputNum === 0 || timesOfMultiplication === 0) {
         return 0;
     }
 
     // when the count of multiplication is negative
-    if (countOfMultiplication < 0) {
-        countOfMultiplication = -countOfMultiplication;
+    if (timesOfMultiplication < 0) {
+        timesOfMultiplication = -timesOfMultiplication;
     }
 
     // multiplying and finding the sum
     let sumOfMultiple = 0;
     let productExpression = "";
 
-    for (let i = 1; i <= countOfMultiplication; i++) {
+    for (let i = 1; i <= timesOfMultiplication; i++) {
         productOfNum = inputNum * i;
         sumOfMultiple += productOfNum;
 
@@ -34,8 +34,8 @@ function findingTheSumOfMultiple(inputNum, countOfMultiplication) {
             productExpression = productExpression + "(" + productOfNum + ")";
         }
 
-        if (i !== countOfMultiplication) {
-            productExpression += "+ "
+        if (i !== timesOfMultiplication) {
+            productExpression += " + "
         }
     }
     return productExpression + "= " + sumOfMultiple;

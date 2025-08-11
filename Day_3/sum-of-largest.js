@@ -50,5 +50,5 @@ function findSumOfTwoLargestNumberFromArray(inputArrayItems) {
 
 }
 
-const givenList = [32, 66, 80, 120, 45];
+const givenList = [-1, -20, -4, -14, -45];
 console.log(findSumOfTwoLargestNumberFromArray(givenList));
