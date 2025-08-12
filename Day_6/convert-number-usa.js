@@ -7,6 +7,13 @@ function convertTheNumberToTheUSAFormat(inputNumber) {
         return false;
     }
 
+    // checking if the number is integer only
+    if(inputNumber%1!==0)
+    {
+        console.error("the number is not a integer");
+        return false;
+    }
+
     // if there is a negative number
     if (inputNumber < 0) {
         inputNumber = -inputNumber
