@@ -33,6 +33,7 @@ function replaceTemplateStringsWithDesiredInput(givenSentence, replacingKeyAndIt
 
 
     // replacing the string
+    let replacedSentence=givenSentence;
     for (let i = 0; i < replacingKeyAndItsValue.length; i++) {
         //skipping the empty slot
         if (!(i in replacingKeyAndItsValue)) {
@@ -42,12 +43,43 @@ function replaceTemplateStringsWithDesiredInput(givenSentence, replacingKeyAndIt
         let replacingValue = replacingKeyAndItsValue[i][1];
 
         let searchTerm = "#[" + replacingKey + "]";
-        givenSentence = givenSentence.replaceAll(searchTerm, replacingValue);
+        replacedSentence = replacedSentence.replaceAll(searchTerm, replacingValue);
     }
-    console.log(givenSentence);
+    console.log(replacedSentence);
     return true;
 }
 
 const templateSentence = "Numentica is 1 company focused on delivering high quality code. It is located in #[location] #[state] #[phone]";
 const inputKeyAndValue = [["location", "Chennai"], ["state", "Tamil Nadu"], ["phone", "9840164723"]];
 replaceTemplateStringsWithDesiredInput(templateSentence, inputKeyAndValue);
+
+// function replaceTheWord(givenSentence,searchTerm,replacingValue)
+// {
+//     let finalSentence="";
+//     let indexOfGivenSentence=0;
+//     while(indexOfGivenSentence<givenSentence.length)
+//     {
+//         let matchFound=true;
+//         for(let j=0;j<searchTerm.length;j++)
+//         {
+//             if(givenSentence[indexOfGivenSentence+j]!==searchTerm[j])
+//             {
+//                 matchFound=false;
+//                 break;
+//             }
+//         }
+//         if(matchFound)
+//         {
+//             finalSentence+=replacingValue;
+//             indexOfGivenSentence+=searchTerm.length;
+//         }
+//         if(!matchFound)
+//         {
+//             finalSentence+=givenSentence[indexOfGivenSentence];
+//             indexOfGivenSentence++;
+//         }
+//     }
+//     return finalSentence;
+// }
+
+

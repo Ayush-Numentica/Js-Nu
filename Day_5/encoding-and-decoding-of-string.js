@@ -86,6 +86,6 @@ function encodingAndDecodingTheCharacterToShifts(inputString, inputShiftTime) {
     console.log(decodedString);
     return true;
 }
-const givenString = "Ar@un";
+const givenString = "arun";
 const numberOfShift = 4;
 encodingAndDecodingTheCharacterToShifts(givenString, numberOfShift);
