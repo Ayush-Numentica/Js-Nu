@@ -31,8 +31,7 @@ function getPairsEqualsSum(inputListItems, targetSum) {
                 }
                 if (!itemAlreadyPresent) {
                     finalPairList = [];
-                    finalPairList.push(inputListItems[i]);
-                    finalPairList.push(inputListItems[j]);
+                    finalPairList.push(inputListItems[i] , inputListItems[j]);
                     console.log(finalPairList);
                 }
                 pairFound=true;
