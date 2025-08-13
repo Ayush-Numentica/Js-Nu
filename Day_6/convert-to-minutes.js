@@ -21,6 +21,7 @@ function convertingTimeInMinutes(inputString) {
     // converting in minutes
     let cleanedInput = "";
     for (let i = 0; i < inputString.length; i++) {
+
         if (!isNaN(inputString[i]) || inputString[i] === ":") {
             cleanedInput += inputString[i];
         }
@@ -30,11 +31,29 @@ function convertingTimeInMinutes(inputString) {
     let splittedString = cleanedInput.split(":");
     let hourInInput = splittedString[0];
     let minutesInInput = splittedString[1];
-     
+
+    if (splittedString.length !== 2) {
+        console.log("Invalid ");
+        return false;
+    }
+
+    // checking whether the hour and minutes are not empty string
+    if (hourInInput === "" && minutesInInput === "") {
+        console.log("Invalid input: missing hour and minutes")
+        return false;
+    }
+
     // converting the string in number
     hourInInput = Number(hourInInput);
     minutesInInput = Number(minutesInInput);
 
+
+    if (isNaN(hourInInput) || isNaN(minutesInInput)) {
+        console.error("Invalid input format: it must be in HH:MM");
+        return false;
+    }
+
+    
     //generating the output
     const finalMinutes = hourInInput * 60 + minutesInInput
     console.log(finalMinutes);
@@ -42,7 +61,7 @@ function convertingTimeInMinutes(inputString) {
 
 }
 
-const givenTime = "0";
+const givenTime = "30";
 convertingTimeInMinutes(givenTime);
 
 

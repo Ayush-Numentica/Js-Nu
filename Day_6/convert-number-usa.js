@@ -33,15 +33,14 @@ function convertTheNumberToTheUSAFormat(inputNumber) {
     let middlePart = numberAsString.slice(3, 6);
     let lastPart = numberAsString.slice(6, 10);
 
-    let finalNumber = "";
-    finalNumber = "(" + initialPart + ")" + middlePart + "-" + lastPart;
+    const finalNumber = "(" + initialPart + ")" + middlePart + "-" + lastPart;
 
     console.log(finalNumber)
-    return true;
+    return finalNumber;
 
 }
 
-let givenNumber = 8.89527220;
+let givenNumber = 9840164723;
 convertTheNumberToTheUSAFormat(givenNumber);
 
 // //slicing first three number

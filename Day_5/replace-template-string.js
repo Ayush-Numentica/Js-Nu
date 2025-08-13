@@ -34,22 +34,29 @@ function replaceTemplateStringsWithDesiredInput(givenSentence, replacingKeyAndIt
 
     // replacing the string
     let replacedSentence=givenSentence;
+    
     for (let i = 0; i < replacingKeyAndItsValue.length; i++) {
         //skipping the empty slot
         if (!(i in replacingKeyAndItsValue)) {
             continue;
         }
-        let replacingKey = replacingKeyAndItsValue[i][0];
-        let replacingValue = replacingKeyAndItsValue[i][1];
-
+        const currentItem = replacingKeyAndItsValue[i];
+        let replacingKey = currentItem[0];
+        let replacingValue = currentItem[1];
         let searchTerm = "#[" + replacingKey + "]";
+        const replacingKeyInSentence = givenSentence.includes(searchTerm);
+        if(replacingKeyInSentence===false)
+        {
+            console.error(searchTerm+" is not present in sentence");
+            return false;
+        }
         replacedSentence = replacedSentence.replaceAll(searchTerm, replacingValue);
     }
     console.log(replacedSentence);
     return true;
 }
 
-const templateSentence = "Numentica is 1 company focused on delivering high quality code. It is located in #[location] #[state] #[phone]";
+const templateSentence = "Numentica is 1 company focused on delivering high quality code. It is located in #[location2] #[state] #[phone]";
 const inputKeyAndValue = [["location", "Chennai"], ["state", "Tamil Nadu"], ["phone", "9840164723"]];
 replaceTemplateStringsWithDesiredInput(templateSentence, inputKeyAndValue);
 

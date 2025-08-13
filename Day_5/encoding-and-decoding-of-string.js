@@ -1,7 +1,10 @@
+//Encoder and Decoder
+//Encode a string in such a way that the output will be the next characters given as input
+
 let lowerCaseAlphabet = "abcdefghijklmnopqrstuvwxyz";
 let upperCaseAlphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
-function encodingAndDecodingTheCharacterToShifts(inputString, inputShiftTime) {
+function encodingAndDecodingByShiftingCharacter(inputString, inputShiftTime) {
     // checking whether the input string is of string type only
     if (typeof inputString !== "string") {
         console.error("your input is not a string");
@@ -26,58 +29,44 @@ function encodingAndDecodingTheCharacterToShifts(inputString, inputShiftTime) {
         return false;
     }
 
+
+
     //encoding the input string
+
+
     let encodedString = "";
     // for lower case letters
     for (let i = 0; i < inputString.length; i++) {
         for (let j = 0; j < lowerCaseAlphabet.length; j++) {
             if (inputString[i] === lowerCaseAlphabet[j]) {
-                if ((j + inputShiftTime) > 25) {
-                    encodedString += lowerCaseAlphabet[(j + inputShiftTime) - 26];
-                }
-                else {
-                    encodedString += lowerCaseAlphabet[j + inputShiftTime];
-                }
+                encodedString += lowerCaseAlphabet[(j + (inputShiftTime % 26)) % 26];
+                break;
             }
         }
         // for upper case letters
-            for (let j = 0; j < upperCaseAlphabet.length; j++) {
-                if (inputString[i] === upperCaseAlphabet[j]) {
-                    if ((j + inputShiftTime) > 25) {
-                        encodedString += upperCaseAlphabet[(j + inputShiftTime) - 26];
-                    }
-                    else {
-                        encodedString += upperCaseAlphabet[j + inputShiftTime];
-                    }
-                }
+        for (let j = 0; j < upperCaseAlphabet.length; j++) {
+            if (inputString[i] === upperCaseAlphabet[j]) {
+                encodedString += upperCaseAlphabet[(j + (inputShiftTime % 26)) % 26];
+
             }
+        }
     }
 
 
     //decoding the input string
-    let encodedInputString=encodedString;
+    let encodedInputString = encodedString;
     let decodedString = "";
     // for lower case letters
     for (let i = 0; i < encodedInputString.length; i++) {
         for (let j = 0; j < lowerCaseAlphabet.length; j++) {
             if (encodedInputString[i] === lowerCaseAlphabet[j]) {
-                if ((j - inputShiftTime) < 0) {
-                    decodedString += lowerCaseAlphabet[(j - inputShiftTime) + 26];
-                }
-                else {
-                    decodedString += lowerCaseAlphabet[j - inputShiftTime];
-                }
+                decodedString += lowerCaseAlphabet[(j - (inputShiftTime % 26)+26) % 26];
             }
         }
         // for upper case letters
         for (let j = 0; j < upperCaseAlphabet.length; j++) {
             if (encodedString[i] === upperCaseAlphabet[j]) {
-                if ((j - inputShiftTime) < 0) {
-                    decodedString += upperCaseAlphabet[(j - inputShiftTime) + 26];
-                }
-                else {
-                    decodedString += upperCaseAlphabet[j - inputShiftTime]
-                }
+                decodedString += upperCaseAlphabet[(j - (inputShiftTime % 26)+26) % 26];
             }
         }
 
@@ -86,6 +75,6 @@ function encodingAndDecodingTheCharacterToShifts(inputString, inputShiftTime) {
     console.log(decodedString);
     return true;
 }
-const givenString = "arun";
-const numberOfShift = 4;
-encodingAndDecodingTheCharacterToShifts(givenString, numberOfShift);
+const givenString = "arunz";
+const numberOfShift = 140;
+encodingAndDecodingByShiftingCharacter(givenString, numberOfShift);

@@ -14,7 +14,7 @@ function checkingEdgeCase(inputString, positionOfRemoving) {
     return true;
 }
 
-function removingLeadingAndTrailingZeroes(givenString, placesWhereToRemove) {
+function removeLeadingAndTrailingZeroes(givenString, placesWhereToRemove) {
     if (!checkingEdgeCase(givenString, placesWhereToRemove)) {
         return false;
     }
@@ -54,4 +54,4 @@ function removingLeadingAndTrailingZeroes(givenString, placesWhereToRemove) {
 
 const inputNumber = "0001110000";
 const positionOfModification = "trailing";
-removingLeadingAndTrailingZeroes(inputNumber, positionOfModification);
+removeLeadingAndTrailingZeroes(inputNumber, positionOfModification);
