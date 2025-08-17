@@ -40,7 +40,7 @@ function convertTheNumberToTheUSAFormat(inputNumber) {
 
 }
 
-let givenNumber = 9840164723;
+let givenNumber = "";
 convertTheNumberToTheUSAFormat(givenNumber);
 
 // //slicing first three number
