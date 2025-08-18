@@ -1,0 +1,13 @@
+{
+  
+  "name": "bill-generation",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "start": "node Bill-generation.js"
+  },
+  "dependencies": {
+    "fuse.js": "^7.1.0"
+  }
+}
+
