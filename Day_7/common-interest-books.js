@@ -94,7 +94,6 @@ function findTheCommomInterestInBooks(inputStudentsDetails) {
 
 
 const studentInformation = [
-  {}, "ayush", [],
   {
     id: 0,
     name: "Arun",
