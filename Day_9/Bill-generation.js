@@ -11,7 +11,6 @@ function generateTheTotalBillFromUserList(givenInventoryData, givenGroceryList) 
     }
 
     // checking whether the list is data and list is empty
-
     if (givenInventoryData.length === 0) {
         console.error("your inventory is empty, add items in your inventory");
         return false;
@@ -20,8 +19,6 @@ function generateTheTotalBillFromUserList(givenInventoryData, givenGroceryList) 
         console.error("your grocery list is empty, buy some items");
         return false;
     }
-
-
 
     let totalBill = 0;
     const fuse = new Fuse(givenInventoryData,
@@ -57,17 +54,13 @@ function generateTheTotalBillFromUserList(givenInventoryData, givenGroceryList) 
 
 
         // checking for the zero quantity in the list and skipping it
-        if(givenGroceryList.length===1 && requestedItem.quantity===0)
-        {
+        if (givenGroceryList.length === 1 && requestedItem.quantity === 0) {
             console.warn("you have only onle item in your list and your item's quantity is 0, kindly increase the quantity");
             return false;
         }
-        else if(requestedItem.quantity===0)
-        {
+        else if (requestedItem.quantity === 0) {
             continue;
         }
-
-
 
         const matcheditem = fuse.search(requestedItem.item);
         // console.log(matcheditem);
@@ -90,8 +83,6 @@ function generateTheTotalBillFromUserList(givenInventoryData, givenGroceryList) 
     return totalBill;
 }
 
-
-
 const inventoryItems = [
     { item: "apple", price: 10.20, quantity: 10 },
     { item: "banana", price: 20, quantity: 15 },
@@ -100,8 +91,8 @@ const inventoryItems = [
 ];
 
 const groceryList = [
-     { item: "Jam - Apricot", quantity: 0 },
-     { item: "Creamers - 10%", quantity: 5 },
+    { item: "Jam - Apricot", quantity: 0 },
+    { item: "Creamers - 10%", quantity: 5 },
     // { item: "Creamers - 10%", quantity:3},
     // { item: "butter", quantity: 3 }
 ];
