@@ -36,11 +36,11 @@ function convertTheNumberToTheUSAFormat(inputNumber) {
     const finalNumber = "(" + initialPart + ")" + middlePart + "-" + lastPart;
 
     console.log(finalNumber)
-    return finalNumber;
+    return true;
 
 }
 
-let givenNumber = "";
+let givenNumber = 87-9572200;
 convertTheNumberToTheUSAFormat(givenNumber);
 
 // //slicing first three number
