@@ -154,5 +154,5 @@ const parcelDescription = [
     { location: "sholinganallur", weight: 50 },
 ];
 
-const deliveryAddress = "sholingana";
+const deliveryAddress = "madipakkam";
 calculateMinimumVehiclesRequiredToDeliverParcel(deliveryAddress)
