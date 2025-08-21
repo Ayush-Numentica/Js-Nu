@@ -111,9 +111,15 @@ function categoriseTheItemsOfClothesShop(givenItemList) {
         }
 
     }
+    if(Object.keys(bySku).length===0)
+    {
+        console.log("there is no any valid input in your given input");
+        return false;
+    }
     finalCategory.bySku = bySku;
     finalCategory.stats = stats;
     console.dir(finalCategory, { depth: null });
+    return finalCategory;
 }
 
 const itemsVariety = [
