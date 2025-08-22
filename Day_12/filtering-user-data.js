@@ -19,6 +19,17 @@ function extractDesiredPageForFilteringData(givenPageNumber, givenPageSize) {
     let lastPage = firstPage + givenPageSize;
 
     let operableDataList = totalUsersData.slice(firstPage, lastPage);
+    operableDataList = operableDataList.filter(item => {
+        if (!item || typeof item !== "object") {
+            return false;
+        }
+        if (Array.isArray(item) && item.length === 0) {
+            return false;
+        }
+        if (!Array.isArray(item) && Object.keys(item).length === 0) {
+            return false;
+        }
+    return true;
     getDesiredOutputFromTheUserData(operableDataList);
     return;
 }
